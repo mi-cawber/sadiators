@@ -1,22 +1,21 @@
 import classes as c
 
-# let's create a couple of players
+# let's create a couple of sadiators
 Paul = c.sadiator('Paul', 'Male', 2)
 Sadia = c.sadiator('Sadia', 'Female', 2)
+Klob = c.sadiator('Klob', 'Unknown', 5)
+Nugget = c.sadiator('Nugget', 'Male', 2)
 
-sadiators = [Paul, Sadia]
+sadiators = [Paul, Sadia, Klob, Nugget]
 
 # we need to generate tickets for them
-for sadiator in sadiators:
-    sadiator.ticket = c.t_gen()
+c.ticket_gen(sadiators)
 
 # we should make a 'fight card'
-fight_card = []
+play_card = c.play_card(sadiators)
 
-for sadiator in sadiators:
-    if sadiator.ticket == 1:
-        fight_card.append(sadiator)
-        continue
-    if sadiator.ticket == 0:
-        sadiator.lucky_days += 1
-        continue
+
+c.play_game(Paul,Klob)
+
+
+print(Paul.wins)
