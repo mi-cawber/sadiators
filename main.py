@@ -1,11 +1,15 @@
 import classes as c
 
-# let's create a couple of sadiators
-Paul = c.sadiator('Paul', 'Male')
-Sadia = c.sadiator('Sadia', 'Female')
-Klob = c.sadiator('Klob', 'Unknown')
-Nugget = c.sadiator('Nugget', 'Male')
+# create sadiator objects
+joshua = c.load_sadiator('joshua')
+walt = c.load_sadiator('walt')
 
-sadiators = [Paul, Sadia, Klob, Nugget]
+# play the game
+c.play_game(joshua, walt)
 
+# save the data
+c.save_data(joshua)
+c.save_data(walt)
 
+print(f'joshua wins: {joshua.wins}')
+print(f'walt wins: {walt.wins}')
