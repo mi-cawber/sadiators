@@ -1,11 +1,13 @@
 import classes as c
+import game as g
 
 # create sadiator objects
 joshua = c.load_sadiator('joshua')
 walt = c.load_sadiator('walt')
 
 # play the game
-c.play_game(joshua, walt)
+# returns number of rounds and stalemates (players had equal cards)
+rounds, stalemates = g.play_game(joshua, walt)
 
 # save the data
 c.save_data(joshua)
