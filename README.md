@@ -1,4 +1,4 @@
-#Purpose
+# Purpose
 There is no real purpose to this project.
 
 There are two characters, Joshua and Walt. The two of them play
