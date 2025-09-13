@@ -11,5 +11,6 @@ c.play_game(joshua, walt)
 c.save_data(joshua)
 c.save_data(walt)
 
-print(f'joshua wins: {joshua.wins}')
-print(f'walt wins: {walt.wins}')
+with open('wins.txt', 'w') as f:
+    f.write(f'Joshua wins: {joshua.wins}\n')
+    f.write(f'Walt wins: {walt.wins}\n')
