@@ -30,6 +30,6 @@ if stalemates > m_stalemates:
 c.save_data(joshua)
 c.save_data(walt)
 
-with open('wins.txt', 'w') as f:
+with open('/home/joshua/sadiators/wins.txt', 'w') as f:
     f.write(f'Joshua wins: {joshua.wins}\n')
     f.write(f'Walt wins: {walt.wins}\n')

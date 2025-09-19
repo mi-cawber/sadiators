@@ -10,8 +10,7 @@ def play_game(player1,player2):
     player1.rw = 0 
     player2.rw = 0
     
-    # this will track how many times during the game
-    # the two players have the same value card
+    # stalemate == players have equal valued cards
     stalemate = 0 
     
     # tracks total rounds per game
@@ -23,46 +22,39 @@ def play_game(player1,player2):
     while not light:
 
         # give each player a 'card'
-        # value is between 1-10
         player1.card = random.randint(1,10)
         player2.card = random.randint(1,10)
         print(f'{player1.name} has a {player1.card}')
         print(f'{player2.name} has a {player2.card}')
 
-        # this block is to see whose value is bigger
-        # see if player 1 has higher value
+        # see who has larger value
         if player1.card > player2.card:
             player1.rw += 1
             print(f'{player1.name} = {player1.rw} rounds won')
 
             rounds += 1
 
-            # check for win condition
             if player1.rw == 2:
                 print(f'{player1.name} wins.')
                 player1.wins += 1
                 player2.losses += 1
 
-                # stop iterating
                 light = True
 
-        # see if player 2 has higher value
         if player2.card > player1.card:
             player2.rw += 1
             print(f'{player2.name} = {player2.rw} rounds won')
             
             rounds += 1
 
-            # check for win condition
             if player2.rw == 2:
                 print(f'{player2.name} wins.')
                 player2.wins += 1
                 player1.losses += 1
 
-                # stop iterating
                 light = True
 
-        # if the cards are equal, move one
+        # stalemate
         if player1.card == player2.card:
 
             stalemate += 1
