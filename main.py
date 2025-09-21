@@ -1,35 +1,34 @@
-import classes as c
-import game as g
+import functions as f
 
 # create sadiator objects
-joshua = c.load_sadiator('joshua')
-walt = c.load_sadiator('walt')
+joshua = f.load_character('joshua')
+walt = f.load_character('walt')
 
 # play the game
 # returns number of rounds and stalemates (players had equal cards)
 rounds, stalemates = g.play_game(joshua, walt)
 
 # checks if game set record for highest rounds/stalemates
-with open('/home/joshua/sadiators/most_rounds.txt', 'r') as f:
-    m_rounds = f.readline()
+with open('/home/joshua/sadiators/most_rounds.txt', 'r') as r:
+    m_rounds = r.readline()
     m_rounds = int(m_rounds)
 
-with open('/home/joshua/sadiators/most_stalemates.txt', 'r') as f:
-    m_stalemates = f.readline()
+with open('/home/joshua/sadiators/most_stalemates.txt', 'r') as r:
+    m_stalemates = r.readline()
     m_stalemates = int(m_stalemates)
 
 if rounds > m_rounds:
-    with open('/home/joshua/sadiators/most_rounds.txt', 'w') as f:
-        f.write(str(rounds))
+    with open('/home/joshua/sadiators/most_rounds.txt', 'w') as w:
+        w.write(str(rounds))
 
 if stalemates > m_stalemates:
-    with open('/home/joshua/sadiators/most_stalemates.txt', 'w') as f:
-        f.write(str(stalemates))
+    with open('/home/joshua/sadiators/most_stalemates.txt', 'w') as w:
+        w.write(str(stalemates))
 
 # save the data
-c.save_data(joshua)
-c.save_data(walt)
+f.save_data(joshua)
+f.save_data(walt)
 
-with open('/home/joshua/sadiators/wins.txt', 'w') as f:
-    f.write(f'Joshua wins: {joshua.wins}\n')
-    f.write(f'Walt wins: {walt.wins}\n')
+with open('/home/joshua/sadiators/wins.txt', 'w') as w:
+    w.write(f'Joshua wins: {joshua.wins}\n')
+    w.write(f'Walt wins: {walt.wins}\n')
