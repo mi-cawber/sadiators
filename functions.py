@@ -17,14 +17,16 @@ def load_data(path):
 def load_character(name):
     return load_data(f'/home/joshua/sadiators/character_data/{name}.pkl')
 
-def record_check(path):
+# used to check for records
+def record_check(path, new):
     with open(path, 'r') as f:
         old = f.readline()
-        old = int(m_rounds)
-
-    if rounds > m_rounds:
-        with open('/home/joshua/sadiators/most_rounds.txt', 'w') as f:
-            f.write(str(rounds))
+        old = int(old)
+        
+        # write new value
+        if new > old:
+            with open(path, 'w') as f:
+                f.write(str(new))
 
 # this is the game
 def play_game(player1,player2):
