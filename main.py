@@ -9,7 +9,7 @@ walt = f.load_character('walt')
 
 # play the game
 # returns number of rounds and stalemates (players had equal cards)
-rounds, stalemates = g.play_game(joshua, walt)
+rounds, stalemates = f.play_game(joshua, walt)
 
 # check for records
 f.record_check(s_path, stalemates)
