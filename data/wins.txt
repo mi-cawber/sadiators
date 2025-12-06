@@ -1,2 +1,2 @@
-Joshua wins: 65001
-Walt wins: 64430
+Joshua wins: 65693
+Walt wins: 65178
